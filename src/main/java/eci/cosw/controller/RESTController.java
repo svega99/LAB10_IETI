@@ -19,7 +19,7 @@ public class RESTController {
    //TODO inject components (TodoRepository and GridFsTemplate)
 
     @RequestMapping("/files/{filename}")
-    public ResponseEntity<InputStreamResource> getImageByName(@PathVariable String filename) throws IOException {
+    public ResponseEntity<InputStreamResource> getFileByName(@PathVariable String filename) throws IOException {
 
         //TODO implement method
         return null;
