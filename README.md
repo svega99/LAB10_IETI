@@ -2,7 +2,7 @@
 Create Spring Boot API that allows file uploading and serving files.
 
 
-##Part 1: Implement File uploader API
+## Part 1: Implement File uploader API
 
 1. Go to the *Application* class and uncomment the code on line 52 (used to store sample image to database).
 
@@ -40,7 +40,7 @@ Create Spring Boot API that allows file uploading and serving files.
     ````
 
 
-##Part 2: Integrate file uploader with React JS project
+## Part 2: Integrate file uploader with React JS project
 
 1. Add the following input to the Todo form:
 
@@ -78,7 +78,7 @@ Create Spring Boot API that allows file uploading and serving files.
 4. Run your React project and verify that the file uploader works.
 
 
-##Part 3: Upgrade your Todo to accept files
+## Part 3: Upgrade your Todo to accept files
 
 1. Inject the *TodoRepository* into the *RESTController using *@Autowired* annotation.
 
