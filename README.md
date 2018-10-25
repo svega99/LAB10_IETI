@@ -4,13 +4,31 @@ Create Spring Boot API that allows file uploading and serving files.
 
 ## Part 1: Implement File uploader API
 
-1. Go to the *Application* class and uncomment the code on line 52 (used to store sample image to database).
+1. Change the Database configuration with your own credentials in the following files:
+        
+    a. *application.properties*:
+    ```text
+        #spring.data.mongodb.uri=mongodb://localhost/santiago
+        spring.data.mongodb.uri=mongodb://<username>:<password>@ds149672.mlab.com:49672/cosw-test
+    ```
+    b. *AppConiguration.java*
+    ```Java
+       MongoCredential credential = MongoCredential.createCredential("<username>", "<database-name>", "<password>".toCharArray());
+        ServerAddress serverAddress = new ServerAddress("ds149672.mlab.com", 49672);
 
-2. Go to your database and verify that the file was created under a fs.files and fs.chunks documents. 
+        // Mongo Client
+        MongoClient mongoClient = new MongoClient(serverAddress, credential, new MongoClientOptions.Builder().build());
 
-3. Go to the RESTController class and inject the *GridFsTemplate* bean by using the *@Autowired* annotation.
 
-4. Implement the *getFileByName* method:
+        return new SimpleMongoDbFactory(mongoClient, "<database-name>");
+    ```
+2. Go to the *Application* class and uncomment the code on line 52 (used to store sample image to database).
+
+3. Go to your database and verify that the file was created under a fs.files and fs.chunks documents. 
+
+4. Go to the RESTController class and inject the *GridFsTemplate* bean by using the *@Autowired* annotation.
+
+5. Implement the *getFileByName* method:
 
     * Find the file with the following code:
         ````Java
@@ -38,7 +56,6 @@ Create Spring Boot API that allows file uploading and serving files.
        //Stores the file into MongoDB
         gridFsTemplate.store(file.getInputStream(), fileName, file.getContentType());
     ````
-
 
 ## Part 2: Integrate file uploader with React JS project
 

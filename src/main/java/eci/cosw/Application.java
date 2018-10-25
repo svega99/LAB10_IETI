@@ -8,6 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.mongodb.gridfs.GridFsTemplate;
+import org.springframework.http.MediaType;
 
 import java.net.URL;
 
@@ -26,8 +27,8 @@ public class Application implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-//        GridFSFile file = gridFsTemplate.findOne(new Query().addCriteria(Criteria.where("filename").is("testing.png")));
-//        URL url = new URL("https://i.dailymail.co.uk/i/pix/tm/2007/07/lionking1807_468x325._to_468x312jpeg");
-//        gridFsTemplate.store(url.openStream(), "lion.jpeg");
+        GridFSFile file = gridFsTemplate.findOne(new Query().addCriteria(Criteria.where("filename").is("testing.png")));
+        URL url = new URL("https://i.dailymail.co.uk/i/pix/tm/2007/07/lionking1807_468x325._to_468x312jpeg");
+        gridFsTemplate.store(url.openStream(), "lion.jpeg",  "image/jpeg");
     }
 }
