@@ -9,18 +9,16 @@ Create Spring Boot API that allows file uploading and serving files.
     a. *application.properties*:
     ```text
         #spring.data.mongodb.uri=mongodb://localhost/santiago
-        spring.data.mongodb.uri=mongodb://<username>:<password>@ds149672.mlab.com:49672/cosw-test
+        spring.data.mongodb.uri=mongodb+srv://<username>:<password>@cluster0-dzkk5.mongodb.net/test?retryWrites=true&w=majority
     ```
     b. *AppConiguration.java*
     ```Java
-       MongoCredential credential = MongoCredential.createCredential("<username>", "<database-name>", "<password>".toCharArray());
-        ServerAddress serverAddress = new ServerAddress("ds149672.mlab.com", 49672);
+        MongoClientURI uri = new MongoClientURI(
+            "mongodb+srv://<username>:<password>@cluster0-dzkk5.mongodb.net/test?retryWrites=true&w=majority");
 
-        // Mongo Client
-        MongoClient mongoClient = new MongoClient(serverAddress, credential, new MongoClientOptions.Builder().build());
+        MongoClient mongoClient = new MongoClient(uri);
 
-
-        return new SimpleMongoDbFactory(mongoClient, "<database-name>");
+        return new SimpleMongoDbFactory( mongoClient, "<database_name>");
     ```
 2. Go to the *Application* class and uncomment the code on line 52 (used to store sample image to database).
 
