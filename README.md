@@ -20,7 +20,7 @@ Create Spring Boot API that allows file uploading and serving files.
 
         return new SimpleMongoDbFactory( mongoClient, "<database_name>");
     ```
-2. Go to the *Application* class and uncomment the code on line 52 (used to store sample image to database).
+2. Go to the *Application* class run the project.
 
 3. Go to your database and verify that the file was created under a fs.files and fs.chunks documents. 
 
