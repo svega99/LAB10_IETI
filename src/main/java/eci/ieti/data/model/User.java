@@ -1,4 +1,4 @@
-package eci.cosw.data.model;
+package eci.ieti.data.model;
 
 public class User {
 

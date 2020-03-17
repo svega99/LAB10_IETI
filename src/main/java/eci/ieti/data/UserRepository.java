@@ -1,6 +1,6 @@
-package eci.cosw.data;
+package eci.ieti.data;
 
-import eci.cosw.data.model.User;
+import eci.ieti.data.model.User;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 public interface UserRepository extends MongoRepository<User, String> {
