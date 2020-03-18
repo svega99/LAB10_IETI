@@ -20,7 +20,7 @@ Create Spring Boot API that allows uploading and serving files.
 
 3. Go to your database and verify that the file was created under a fs.files and fs.chunks documents. 
 
-4. Go to the RESTController class and inject the *GridFsTemplate* bean by using the *@Autowired* annotation.
+4. Go to the *RESTController* class and inject the *GridFsTemplate* bean by using the *@Autowired* annotation.
 
 5. Implement the *getFileByName* method:
 
@@ -90,7 +90,7 @@ Create Spring Boot API that allows uploading and serving files.
 
 ## Part 3: Upgrade your Todo to accept files
 
-1. Inject the *TodoRepository* into the *RESTController using *@Autowired* annotation.
+1. Inject the *TodoRepository* into the *RESTController* using *@Autowired* annotation.
 
 2. Implement the *createTodo* and *getTodoList* methods of the *RESTController*.
 
