@@ -1,7 +1,7 @@
-package eci.cosw.data;
+package eci.ieti.data;
 
-import eci.cosw.data.model.Todo;
-import eci.cosw.data.model.User;
+import eci.ieti.data.model.Todo;
+import eci.ieti.data.model.User;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 import java.util.List;

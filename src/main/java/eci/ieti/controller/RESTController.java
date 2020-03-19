@@ -1,7 +1,7 @@
-package eci.cosw.controller;
+package eci.ieti.controller;
 
 
-import eci.cosw.data.model.Todo;
+import eci.ieti.data.model.Todo;
 import org.springframework.core.io.InputStreamResource;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
